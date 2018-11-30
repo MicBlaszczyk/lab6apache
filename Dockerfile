@@ -1,5 +1,6 @@
-FROM ubuntu
+FROM java:8
 LABEL maintainer="michal.blaszczyk"
-EXPOSE 80
-RUN apt-get update && apt-get upgrade -y && apt-get -y install apache2
-CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
+COPY ./mysql-connector-java-8.0.13.jar /mysql-connector-java-8.0.13.jar
+COPY ./main.java /main.java
+WORKDIR /
+RUN ["javac", "main.java"]
