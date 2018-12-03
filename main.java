@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.Scanner;
 
-class main {
+class MyClass {
     public static void main(String args[]) {
 
         Statement statement;
@@ -11,7 +11,7 @@ class main {
 
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/java", "root", null
+                    "jdbc:mysql://localhost:3306/mydb", "root", null
             );
 
             String ct = "CREATE TABLE IF NOT EXISTS users (username VARCHAR(30), password VARCHAR(30), name VARCHAR(30));";
@@ -61,4 +61,3 @@ class main {
         }
     }
 }
-
