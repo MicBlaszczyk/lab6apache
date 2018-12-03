@@ -1,6 +1,6 @@
 FROM java:8
 COPY ./mysql-connector-java-8.0.13.jar /mysql-connector-java-8.0.13.jar
-COPY ./MyClass.java /MyClass.java
+COPY ./main.java /main.java
 WORKDIR /
-RUN ["javac", "MyClass.java"]
-RUN ["java", "-cp", "MyClass.class"]
+RUN ["javac", "main.java"]
+RUN ["java", "-cp", ".:mysql-connector-java-8.0.13.jar", "main"]
