@@ -15,7 +15,7 @@ services:
      ip4_address: 10.0.10.3
 
  java:
-  image: ./java
+  image: michalblaszczykpollub/lab6apache
   container_name: java
   depends_on:
    - mysql
