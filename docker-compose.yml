@@ -7,9 +7,9 @@ services:
       - '3306'
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=myDB
-      - MYSQL_USER=michalblaszczyk
-      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=mbl
+      - MYSQL_PASSWORD=root
     networks:
       bridge_zadanie_1:
         ipv4_address: 10.0.10.3
@@ -29,6 +29,3 @@ networks:
       config:
         - subnet: 10.0.10.0/24
           gateway: 10.0.10.1
-
- 
-
