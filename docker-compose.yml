@@ -1,27 +1,34 @@
 version: '2'
 services:
- mysql:
-  image: mysql
-  container_name: pwcho2018-83722
-  ports:
-   - '3306'
-  enviroment:
-   - MYSQL_ROOT_PASSWORD=root
-   - MYSQL_DATABASE=java
-   - MYSQL_USER=MBlaszczyk
-   - MYSQL_PASSWORD=password
-  networks:
-   bridge-zadanie-1:
-     ip4_address: 10.0.10.3
-
- java:
-  image: micblaszczyk/lab6apache
-  container_name: java
-  depends_on:
-   - mysql
-  networks:
-   name: bridge-zadanie-1
+  mysql:
+    image: mysql
+    container_name: pwcho2018-83723
+    ports: 
+      - '3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=myDB
+      - MYSQL_USER=mbobel
+      - MYSQL_PASSWORD=password
+    networks:
+      bridge_zadanie_1:
+        ipv4_address: 10.0.10.3
+  java:
+    image: marcinior7/docker-app
+    container_name: java
+    depends_on:
+      - mysql
+    networks:
+      bridge_zadanie_1:
+        ipv4_address: 10.0.10.4
 
 networks:
-  bridge-zadanie-1:
+  bridge_zadanie_1:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.10.0/24
+          gateway: 10.0.10.1
+
+ 
+
