@@ -11,7 +11,7 @@ class main {
 
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/mydb", "root", null
+                    "jdbc:mysql://10.0.10.3:3306/mydb", "root", null
             );
 
             String ct = "CREATE TABLE IF NOT EXISTS users (username VARCHAR(30), password VARCHAR(30), name VARCHAR(30));";
