@@ -2,19 +2,19 @@ version: '2'
 services:
   mysql:
     image: mysql
-    container_name: pwcho2018-83723
+    container_name: pwcho2018-83722
     ports: 
       - '3306'
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=myDB
-      - MYSQL_USER=mbobel
+      - MYSQL_USER=michalblaszczyk
       - MYSQL_PASSWORD=password
     networks:
       bridge_zadanie_1:
         ipv4_address: 10.0.10.3
   java:
-    image: marcinior7/docker-app
+    image: michalblaszczykpollub/lab6apache
     container_name: java
     depends_on:
       - mysql
