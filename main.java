@@ -4,7 +4,7 @@ import java.sql.*;
 public class main {
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://10.0.10.3:3306";
+    static final String DB_URL = "jdbc:mysql://10.0.10.3:3306/mydb";
 
     //  Database credentials
     static final String USER = "mbl";
