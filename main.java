@@ -4,7 +4,7 @@ public class main {
     static String template = "jdbc:mysql://localhost/%s?useEncoding=true&characterEncoding=UTF-8&user=%s&password=%s";
 
     
-    public static void main(){
+    public static void main(String[] args){
         dbConnector();
     }
     
