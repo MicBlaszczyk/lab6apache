@@ -1,7 +1,7 @@
 //STEP 1. Import required packages
 import java.sql.*;
 public class main {
-    static String template = "jdbc:mysql://localhost/%s?useEncoding=true&characterEncoding=UTF-8&user=%s&password=%s";
+    static String template = "jdbc:mysql://http://10.0.10.3:3306/%s?useEncoding=true&characterEncoding=UTF-8&user=%s&password=%s";
 
     
     public static void main(String[] args){
