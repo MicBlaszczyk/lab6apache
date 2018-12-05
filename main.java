@@ -14,45 +14,28 @@ public class main {
    Connection conn = null;
    Statement stmt = null;
    try{
+      System.out.println("------TRY------");
       //STEP 2: Register JDBC driver
       Class.forName("com.mysql.jdbc.Driver");
 
       //STEP 3: Open a connection
       System.out.println("Connecting to database...");
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
-
-      //STEP 4: Execute a query
-      System.out.println("Creating statement...");
-      stmt = conn.createStatement();
-      String sql;
-      sql = "SELECT id, first, last, age FROM Employees";
-      ResultSet rs = stmt.executeQuery(sql);
-
-      //STEP 5: Extract data from result set
-      while(rs.next()){
-         //Retrieve by column name
-         int id  = rs.getInt("id");
-         int age = rs.getInt("age");
-         String first = rs.getString("first");
-         String last = rs.getString("last");
-
-         //Display values
-         System.out.print("ID: " + id);
-         System.out.print(", Age: " + age);
-         System.out.print(", First: " + first);
-         System.out.println(", Last: " + last);
-      }
+      
       //STEP 6: Clean-up environment
       rs.close();
       stmt.close();
       conn.close();
    }catch(SQLException se){
+      System.out.println("------SQLExeption------");
       //Handle errors for JDBC
       se.printStackTrace();
    }catch(Exception e){
+      System.out.println("------Exept------");
       //Handle errors for Class.forName
       e.printStackTrace();
    }finally{
+      System.out.println("------FINALLY------");
       //finally block used to close resources
       try{
          if(stmt!=null)
